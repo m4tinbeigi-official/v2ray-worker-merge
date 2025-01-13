@@ -8,6 +8,7 @@ addEventListener("fetch", event => {
 
 async function handleRequest(request) {
   var url = new URL(request.url);
+  var worker = url.searchParams.get('w');
   var config = url.searchParams.get('c');
   var serverIndex = url.searchParams.get('s') || 0;
   var address = addresses[serverIndex % addresses.length];
